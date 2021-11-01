@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><i class="fas fa-utensils"></i>food</a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home">asosiy</a>
+        <a href="#speciality">mutaxassislik</a>
+        <a href="#popular">mashhur</a>
+        <a href="#gallery">galereya</a>
+        <a href="#review">izoxlar</a>
+        <a href="#order">buyurtma berish</a>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Sevgi Bilan Tayyorlangan Taom</h3>
+        <p>Amerikaning va dunyoning fast foodlar qiroliga aylanish uchun nemis bifshteksi yo’lda yeyishga qulay.</p>
+        <a href="#" class="btn">Buyurtma berish</a>
+    </div>
+
+    <div class="image">
+        <img src="{% static 'images/home-img.png' %}" alt="home-img.png">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- speciality section starts  -->
+
+<section class="speciality" id="speciality">
+
+    <h1 class="heading"> Bizning <span> Mutaxassisligimiz </span> </h1>
+
+    <div class="box-container">
+
+        {% for our_opecialty in our_opecialty %}
+        <div class="box">
+            <img class="image" src="{{ our_opecialty.images.url }}" alt="Our opecialty images">
+            <div class="content">
+                <img src="{{ our_opecialty.icon.url }}" alt="Our opecialty icons">
+                <h3>{{ our_opecialty.title }}</h3>
+                <p>{{ our_opecialty.info }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+<!-- speciality section ends -->
+
+<!-- popular section starts  -->
+{% include 'popular.html' %}
+<!-- popular section ends -->
+
+
+<!-- steps section starts  -->
+
+<div class="step-container">
+
+    <h1 class="heading">Biz <span>Qanday ishlaymiz</span></h1>
+
+    <section class="steps">
+
+        <div class="box">
+            <img src="{% static 'images/step-1.jpg' %}" alt="Step section">
+            <h3>Sevimli Taomingizni Tanlang</h3>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/step-2.jpg' %}" alt="Step section">
+            <h3>Bepul Va Tez Yetkazib Berish</h3>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/step-3.jpg' %}" alt="Step section">
+            <h3>Oson To'lov Usullari</h3>
+        </div>
+        <div class="box">
+            <img src="{% static 'images/step-4.jpg' %}" alt="Step section">
+            <h3>Va Nihoyat, Taomingizdan Rohatlaning</h3>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- steps section ends -->
+
+<!-- gallery section starts  -->
+{% include 'gallarey.html' %}
+<!-- gallery section ends -->
+
+<!-- review section starts  -->
+{% include 'comments.html' %}
+<!-- review section ends -->
+
+<!-- order section starts  -->
+{% include 'order.html' %}
+<!-- order section ends -->
+
+<!-- footer section  -->
+{% include 'footer.html' %}
+<!-- footer section end  -->
+
+
+<!-- scroll top button  -->
+<a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
+
+<!-- loader  -->
+<div class="loader-container">
+    <img src="{% static 'images/loader.gif' %}" alt="loader.gif">
+</div>
+
+
+
+{% endblock %}

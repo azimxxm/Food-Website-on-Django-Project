@@ -1,0 +1,21 @@
+<section class="gallery" id="gallery">
+
+    <h1 class="heading"> Bizning Oziq-Ovqat <span> Galereyamiz </span> </h1>
+
+    <div class="box-container">
+
+        {% for gallery in gallery %}
+        <div class="box">
+            <img src="{{ gallery.images.url }}" alt="Galarey images ">
+            <div class="content">
+                <h3>{{ gallery.title }}</h3>
+                <p>{{ gallery.info }}</p>
+                <a href="#" class="btn">Buyurtma berish</a>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+</section>

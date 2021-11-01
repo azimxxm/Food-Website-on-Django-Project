@@ -1,0 +1,25 @@
+<section class="popular" id="popular">
+
+    <h1 class="heading"> Eng <span>Mashhur </span> Taomlar </h1>
+
+    <div class="box-container">
+
+        {% for popular in popular %}
+        <div class="box">
+            <span class="price"> ${{ popular.price_1 }} - ${{ popular.price_2 }} </span>
+            <img src="{{ popular.images.url }} " alt="popular orders images">
+            <h3>{{ popular.name }} </h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="#" class="btn">Buyurtma berish</a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>

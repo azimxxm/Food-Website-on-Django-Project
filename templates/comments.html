@@ -1,0 +1,25 @@
+<section class="review" id="review">
+
+    <h1 class="heading"> Mijozlarimiz <span>Sharhlari</span> </h1>
+
+    <div class="box-container">
+
+        {% for comments in comments %}
+        <div class="box">
+            <img src="{{ comments.images.url }}" alt="Avatar customer">
+            <h3>{{ comments.name }}</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>{{ comments.commant }}</p>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+</section>

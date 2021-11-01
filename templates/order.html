@@ -1,0 +1,31 @@
+<section class="order" id="order">
+
+    <h1 class="heading"> <span>Hoziroq </span> Buyurtma Bering </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/order-img.jpg" alt="">
+        </div>
+
+        <form action="" method="post">
+
+            <div class="inputBox">
+                {{ form_order_now.name }}
+                {{ form_order_now.email }}
+            </div>
+
+            <div class="inputBox">
+                {{ form_order_now.phone }}
+                {{ form_order_now.food_name }}
+            </div>
+
+            {{ form_order_now.adress }}
+
+            <input type="submit" value="Buyurtma berish" class="btn">
+
+        </form>
+
+    </div>
+
+</section>
